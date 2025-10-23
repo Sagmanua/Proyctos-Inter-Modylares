@@ -1,0 +1,12 @@
+{
+  "datos_personales": {
+    "nombre": "Bohdan",
+    "apellidos": "Sydorenko",
+    "email": "info@gmail.com",
+    "telefono":"90545234",
+    "direccion":"la calle no se",
+    "codigopostal":"46000"
+  },
+  "experiencia": "",
+  "formacion": ""
+}
