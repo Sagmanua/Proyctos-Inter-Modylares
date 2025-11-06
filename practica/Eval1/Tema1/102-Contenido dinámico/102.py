@@ -1,4 +1,18 @@
 from flask import Flask
+import mysql.connector
+
+try:
+    conexion=mysql.connector.connect(
+        host="localhost",
+        user="appuser",
+        password="m1ClaveSegura!",
+        database="portafolio"
+    )
+    cursor = conexion.cursor()
+    print("✅ Conexión exitosa!")
+    print("Hola tu redacta database portafolio")
+except Exception as e:
+    print("❌ Error:", e)
 
 aplicacion = Flask(__name__)
 
@@ -28,3 +42,8 @@ def raiz():
   
 if __name__ == "__main__":
   aplicacion.run(debug=True)
+
+
+
+
+
