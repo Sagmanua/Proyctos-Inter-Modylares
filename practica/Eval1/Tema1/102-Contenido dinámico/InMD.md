@@ -1,5 +1,7 @@
 # Indroduccion brece y contexalizacion
+En esta práctica se trabajó con un servidor web desarrollado en Flask, un microframework de Python que permite crear aplicaciones web de forma sencilla y rápida. El objetivo fue comprender cómo se puede generar una página dinámica —en este caso, un blog— a partir de datos almacenados en un archivo JSON, y cómo el servidor procesa esa información para mostrarla en el navegador.
 
+A través de esta experiencia, se exploró la relación entre el backend (servidor Flask y archivo JSON) y el frontend (HTML y CSS), aprendiendo cómo pequeños cambios en el código o en los datos se reflejan directamente en la página web generada.
 
 
 
@@ -187,4 +189,6 @@ if __name__ == "__main__":
 ```
 
 # 4.-Cierre/Conclusión enlazando con la unidad
+Esta práctica permitió aplicar los conocimientos de la unidad sobre desarrollo web dinámico y gestión de datos con Python. Al utilizar Flask, se comprendió cómo un servidor puede generar contenido HTML de forma automática a partir de archivos JSON, demostrando la importancia de separar la lógica del servidor y la presentación visual.
 
+Además, la experiencia reforzó conceptos clave como la carga y manipulación de datos, la estructura de una aplicación Flask, y la integración de HTML y CSS para mejorar la apariencia del sitio. En conjunto, la actividad mostró de manera práctica cómo los fundamentos teóricos de la unidad se aplican al desarrollo de aplicaciones web reales y dinámicas.
