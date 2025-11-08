@@ -1,0 +1,203 @@
+# Indroduccion brece y contexalizacion
+En este ejercicio se desarrolla una aplicación web sencilla con Flask y HTML cuyo objetivo es mostrar un currículum vitae.
+La aplicación lee los datos personales desde un archivo JSON y los presenta en una plantilla HTML, combinando así la gestión de datos (Python y JSON) con la visualización (HTML y CSS).
+
+Este proyecto permite comprender cómo interactúan las capas básicas de una aplicación web:
+
+Modelo: contiene los datos (curriculum.json)
+
+Vista: define la estructura visual (curriculum.html)
+
+Controlador: gestiona la lógica y conexión entre ambos (curriculum.py con Flask)
+
+De esta manera, el ejercicio introduce el patrón MVC y muestra una aplicación práctica de cómo integrar diferentes tecnologías web en un entorno real de desarrollo.
+
+
+
+# Desarrollo técnico correcto y preciso
+## Python
+### import flask para hacer la servidor en Python y import json para hacer data bases en json para guarder informacion
+```
+from flask import Flask
+import json
+```
+### crear server
+```
+app = Flask(__name__)
+
+@app.route("/")
+def cv():
+    return render_template_string(html,**dp)
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
+### Dentro de server flask conecta Json o Html
+#### Conectar json file con Python
+```
+with open("curiculum.json",encoding="utf-8") as f:
+        data = json.load(f)
+    dp = data["datos_personales"]
+```
+#### Conectar Html file con Python
+```
+with open("index.html",encoding="utf-8") as f:
+        html = f.read()
+```
+## Json
+### Crear una datos de una usario
+```
+{
+  "datos_personales": {
+    "nombre": "Bohdan",
+    "apellidos": "Sydorenko",
+    "email": "info@gmail.com",
+    "telefono":"90545234",
+    "direccion":"la calle no se",
+    "codigopostal":"46000"
+  },
+  "experiencia": "",
+  "formacion": ""
+}
+```
+## Html
+### Crear un corte curiculumn
+## HTML
+### Despues de crear una gile `index.html` voy a hacer una pagina
+### Código básico para una estructura de do
+```
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Añade tu contenido aquí -->
+  </head>
+  <body>
+    <!-- Añade tu contenido aquí -->
+  </body>
+</html>
+```
+### Esribo `head` en que guardo configuraciones y enlaces necesarios para que la página funcione y se vea bien, pero no muestra contenido en la pantalla.
+```
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+```
+### Esribo `<body>` que es contiene todo lo que se muestra en la pantalla: encabezado, menú, contenido principal y pie de página
+```
+<body>
+    <header>Encabezado</header>
+    <nav>Menú Navegación</nav>
+    <main>
+        <section class="item">Sección 1</section>
+        <section class="item">Sección 2</section>
+        <section class="item">Sección 3</section>
+    </main>
+    <footer>Pie de página</footer>
+</body>
+```
+## Css
+### Crear una css detro de una file html
+```
+<style>
+            html{background: gray;font-family: sans-serif;}
+            body{background: wheat;margin: auto; min-height: 200px;display: flex;width: 600px;}
+            #isqurda{flex:1;background: darkblue;padding: 20px;}
+            #derecha{flex:4;background:white ;padding: 20px;}
+</style>
+```
+### Html
+#### `background-color` para cambiar color del fondo
+#### `font-family`sirve para elegir la fuente (tipo de letra) que se usará en un texto.
+```
+html{background: gray;font-family: sans-serif;}
+```
+### Body
+#### `background-color` para cambiar color del fondo
+#### `margin`  sin márgenes en el body.
+#### `display` Define cómo se comporta un elemento en la página, es decir, cómo se muestra y cómo afecta al resto de elementos.
+```
+body{background: wheat;margin: auto; min-height: 200px;display: flex;width: 600px;}
+```
+### isqurda , derecha
+#### `flex` un modo de diseño que facilita alinear y distribuir elementos.
+#### `background-color` para cambiar color del fondo 
+#### `flex` un modo de diseño que facilita alinear y distribuir elementos.
+
+```
+#isqurda{flex:1;background: darkblue;padding: 20px;}
+#derecha{flex:4;background:white ;padding: 20px;}
+```
+# Codigo completa
+## Python
+```
+from flask import Flask, render_template_string
+import json
+
+app = Flask(__name__)
+
+@app.route("/")
+def cv():
+    with open("curriculum.json", encoding="utf-8") as f:
+        data = json.load(f)
+    dp = data["datos_personales"]
+
+    with open("curriculum.html", encoding="utf-8") as f:
+        html = f.read()
+
+    return render_template_string(html, **dp)
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+## Json
+```
+{
+  "datos_personales": {
+    "nombre": "Jose Vicente",
+    "apellidos": "Carratalá Sanchis",
+    "email": "info@jocarsa.com",
+    "telefono": "620891718",
+    "direccion": "La calle de Jose Vicente",
+    "codigo_postal": "46000 Valencia"
+  },
+  "experiencia": "",
+  "formacion": ""
+}
+```
+## Html
+```
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>Curriculum</title>
+    <meta charset="utf-8">
+    <style>
+      html { background: grey; font-family: sans-serif; }
+      body { background: white; margin: auto; min-height: 200px; display: flex; width: 600px; }
+      #izquierda { flex: 1; background: darkblue; padding: 20px; }
+      #derecha { flex: 4; background: white; padding: 20px; }
+    </style>
+  </head>
+  <body>
+    <div id="izquierda"></div>
+    <div id="derecha">
+      <h1>{{ nombre }} {{ apellidos }}</h1>
+      <p>{{ email }}</p>
+      <ul>
+        <li>{{ telefono }}</li>
+        <li>{{ direccion }}</li>
+        <li>{{ codigo_postal }}</li>
+      </ul>
+    </div>
+  </body>
+</html>
+```
+
+# 4.-Cierre/Conclusión enlazando con la unidad
+En este ejercicio, has aprendido cómo leer datos de un archivo JSON y mostrarlos en una página HTML utilizando Flask. Este es un ejemplo práctico de cómo integrar diferentes tecnologías web (HTML, CSS, JavaScript) con Python para crear aplicaciones web simples. Asegúrate de entender cada paso y experimenta modificando los datos del curriculum.json y la estructura del curriculum.html para ver cómo cambia la salida.
+
+Recuerda que el objetivo es no solo seguir las instrucciones, sino también aprender a aplicar lo que has visto en clase. Prueba a modificar el diseño de tu curriculum o agregar más información si lo deseas. ¡Buena suerte!
