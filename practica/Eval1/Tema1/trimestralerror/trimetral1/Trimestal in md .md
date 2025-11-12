@@ -42,8 +42,9 @@ filas = cursor.fetchall()
 ```
 import mysql.connector
 from flask import Flask
-
+```
 # Conexión a la base de datos
+```
 conexion = mysql.connector.connect(
     host="localhost",
     user="appuser",
@@ -51,16 +52,21 @@ conexion = mysql.connector.connect(
     database="portafolioexamen"
 )
 cursor = conexion.cursor()
-
+```
+### conecta a Flask 
+```
 app = Flask(__name__)
-
 @app.route("/")
 def holamundo():
-    # Ejecutar consulta
+```
+###  Setect todo de vista de piezas_y_categorias de un base de datos 
+```
     cursor.execute("SELECT * FROM CatPIEz ;")  # Cambia 'tu_tabla' por tu tabla real
     filas = cursor.fetchall()
+```
+# Generar HTML ### Ahora en cada cadena escribe html
 
-    # Generar HTML
+```
     cadena = ''' 
 <!doctype html>
 <html lang="es">
@@ -111,11 +117,23 @@ def holamundo():
 </footer>
 </body>
 </html>
+```
+### cojer informacion de bases de datos 
+```
+    for fila in filas:
+        cadena += f'''
+        <div class="item">
+            <h2>{fila[1]}</h2>
+            <p>{fila[2]}</p>
+            <p>Fecha: {fila[3]}</p>
+            <p>Categoría: {fila[5]}</p>
+        </div>
+        '''
+```
 # Codigo completa
 ```
 import mysql.connector
 from flask import Flask
-
 # Conexión a la base de datos
 conexion = mysql.connector.connect(
     host="localhost",
