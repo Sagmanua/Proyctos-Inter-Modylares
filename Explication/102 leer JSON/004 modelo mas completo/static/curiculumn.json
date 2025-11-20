@@ -3,8 +3,23 @@
     "nombre": "Bohdan",
     "apellidos": "Sydorenko",
     "email": "info@gmail.com",
-    "telefono":"90545234",
+    "telefono":["345345","24352435"],
     "direccion":"la calle no se",
     "codigopostal":"46000"
-  }
+  },
+  "Experencia_laboral":[
+    {
+      "titulo":"Profesr",
+      "empresa":"CEAC",
+      "timespan":"2025-presente",
+      "descripcion":"profecor em cilcos"
+    },
+    {
+      "titulo":"Profesr",
+      "empresa":"CEAC",
+      "timespan":"2025-presente",
+      "descripcion":"profecor em cilcos"
+    }
+
+  ]
 }
