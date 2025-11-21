@@ -52,8 +52,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                   {% for contenido in mis_columnas %}
-                        <th>{{contenido}}</th>
+                   {% for filla in mi_contenido_tabla %}
+                        <tr>
+                            {%for dato in filla%}
+                            <td>{{dato}}</td>
+                            {%endfor%}
+
+                        </tr>
+
                         {%endfor%}
                 </tbody>
             </table>
