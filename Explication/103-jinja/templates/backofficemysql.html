@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<head>
+    <title>Backoffice</title>
+    <meta charset="utf-8">
+    <style>
+        html,body{
+            background: MediumSeaGreen;width: 100%;height: 100%;padding: 10px;margin: 0px;
+        }
+        main{
+            display: flex;height: 100%;
+        }
+        header{
+            color:white;padding: 20px;
+        }
+        nav{
+            flex:1;color: white;padding: 20px;display: flex;flex-direction: column; gap: 20px;
+        }
+        section{flex:5;background: wheat;padding: 20px;}
+        nav a {
+            background: wheat;color: indigo; padding: 2opx;
+        }
+        table{
+            width: 100%;border-collapse: collapse;border: 2px solid MediumSeaGreen;
+        }
+        table th,table td {
+            padding: 10px;text-align: center;border: 2px solid MediumSeaGreen;
+        }
+        table thead{
+            background: MediumSeaGreen;
+        }
+    </style>
+</head>
+<body>
+    <headaer>Aplicacion emersarial superchula de Bohdan</headaer>
+    <main>
+        <nav>
+            {%for tabla in mis_tablas%}
+                <a>{{tabla}}<a>
+            {%endfor%}
+            <a>Clientes</a>
+            <a>Productos</a>
+            <a>Pedidos</a>
+
+        </nav>
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Email</th>
+                        <th>Direcccion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jose</td><td>Garcia</td><td>jose@garcia.com</td><td>Calle No Sé</td>
+                    </tr>
+                    <tr>
+                        <td>Maria</td><td>Perez</td><td>maria.perez@example.com</td><td>Avenida Central 123</td>
+                    </tr>
+                    <tr>
+                        <td>Carlos</td><td>Lopez</td><td>carlos.lopez@example.com</td><td>Calle del Sol 45</td>
+                    </tr>
+                    <tr>
+                        <td>Ana</td><td>Martinez</td><td>ana.mtz@example.com</td><td>Boulevard Norte 88</td>
+                    </tr>
+                    <tr>
+                        <td>Juan</td><td>Fernandez</td><td>juan.fdz@example.com</td><td>Calle Jardín 12</td>
+                    </tr>
+                    <tr>
+                        <td>Lucia</td><td>Diaz</td><td>lucia.dz@example.com</td><td>Paseo del Río 67</td>
+                    </tr>
+                    <tr>
+                        <td>Pedro</td><td>Ramirez</td><td>pedro.rz@example.com</td><td>Calle Magnolia 5</td>
+                    </tr>
+                    <tr>
+                        <td>Laura</td><td>Gomez</td><td>laura.gmz@example.com</td><td>Avenida del Parque 90</td>
+                    </tr>
+                    <tr>
+                        <td>Andres</td><td>Santos</td><td>andres.st@example.com</td><td>Calle Luna 33</td>
+                    </tr>
+                    <tr>
+                        <td>Elena</td><td>Cruz</td><td>elena.cr@example.com</td><td>Paseo del Mar 101</td>
+                    </tr>
+                    <tr>
+                        <td>Roberto</td><td>Ruiz</td><td>roberto.rz@example.com</td><td>Calle Olivo 8</td>
+                    </tr>
+                    <tr>
+                        <td>Sofia</td><td>Morales</td><td>sofia.mr@example.com</td><td>Avenida del Lago 24</td>
+                    </tr>
+                    <tr>
+                        <td>Diego</td><td>Torres</td><td>diego.tr@example.com</td><td>Calle Norte 77</td>
+                    </tr>
+                    <tr>
+                        <td>Paula</td><td>Vargas</td><td>paula.vg@example.com</td><td>Calle Sur 14</td>
+                    </tr>
+                    <tr>
+                        <td>Hector</td><td>Navarro</td><td>hector.nv@example.com</td><td>Calle Cedro 40</td>
+                    </tr>
+                    <tr>
+                        <td>Isabel</td><td>Mendoza</td><td>isabel.md@example.com</td><td>Avenida Dorada 66</td>
+                    </tr>
+                    <tr>
+                        <td>Francisco</td><td>Herrera</td><td>francisco.hr@example.com</td><td>Barrio Centro 3</td>
+                    </tr>
+                    <tr>
+                        <td>Camila</td><td>Iglesias</td><td>camila.ig@example.com</td><td>Calle Roble 55</td>
+                    </tr>
+                    <tr>
+                        <td>Ricardo</td><td>Castro</td><td>ricardo.cs@example.com</td><td>Avenida Primavera 29</td>
+                    </tr>
+                    <tr>
+                        <td>Valeria</td><td>Silva</td><td>valeria.sv@example.com</td><td>Calle Florencia 98</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
