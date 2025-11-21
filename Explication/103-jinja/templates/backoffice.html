@@ -13,15 +13,23 @@
             color:white;padding: 20px;
         }
         nav{
-            flex:1;color: white;padding: 20px;
+            flex:1;color: white;padding: 20px;display: flex;flex-direction: column; gap: 20px;
         }
         section{flex:5;background: wheat;padding: 20px;}
+        nav a {
+            background: wheat;color: indigo; padding: 2opx;
+        }
     </style>
 </head>
 <body>
     <headaer>Aplicacion emersarial superchula de Bohdan</headaer>
     <main>
-        <nav>Menu</nav>
+        <nav>
+            <a>Clientes</a>
+            <a>Productos</a>
+            <a>Pedidos</a>
+
+        </nav>
         <section>Contenido</section>
     </main>
 </body>
