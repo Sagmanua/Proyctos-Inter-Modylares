@@ -22,13 +22,18 @@ columnas = []
 fillas = cursor.fetchall()
 for filla in fillas:
     columnas.append(filla[0])
-
+# ------------------------- Esto envia las contenido de las columnas
+cursor.execute("SELECT * FROM piezasportafolio")
+contenido_tabla = cursor.fetchall()
 ####################### Mysql #############################
 
 app = Flask(__name__)
 @app.route("/")
 def inicio():
-    return render_template("backofice007.html",mis_tablas = tablas,mis_columnas=columnas)
+    return render_template("backofice007.html",
+                           mis_tablas = tablas,
+                           mis_columnas=columnas,
+                           mi_contenido_tabla= contenido_tabla)
 
 if __name__ == "__main__":
     app.run(debug=True)
