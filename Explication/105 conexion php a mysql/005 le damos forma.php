@@ -1,8 +1,7 @@
-
 <?php
 
   $host = "localhost";
-  $user = "blogphpasd";
+  $user = "blogphp";
   $pass = "Blogphp123$";
   $db   = "blogphp";
 
@@ -13,8 +12,16 @@
   $resultado = $conexion->query($sql);
 
   while ($fila = $resultado->fetch_assoc()) {
-    var_dump($fila);
+    echo '
+    	<article>
+      	<h3>'.$fila['titulo'].'</h3>
+        <time>'.$fila['fecha'].'</time>
+        <p>'.$fila['autor'].'</p>
+        <p>'.$fila['contenido'].'</p>
+      </article>
+    ';
   }
 
   $conexion->close();
   
+?>
