@@ -14,4 +14,4 @@ Escritorio, con barra de navegación, y tabla
 
 Esto quiere decir que vamos a poder hacer proyectos
 1.-Muestren información al usuario "de la calle" (CR)
-2.-Tengan un panel de administración (CRUD)
+2.-Tengan un panel de administración (CRUDS)

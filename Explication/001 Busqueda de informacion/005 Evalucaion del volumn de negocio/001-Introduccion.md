@@ -27,4 +27,4 @@ Digamos un porcentaje a éxito
 Si el centro deportivo abre de 9 a 21
 8 reservas
 8 * 120
-120 * 30 = 7200 euros
+120 * 30 = 3600 euros
